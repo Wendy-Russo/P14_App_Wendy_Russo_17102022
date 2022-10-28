@@ -1,0 +1,55 @@
+table, th, td, tr, thead, tbody{
+  border: 1px solid black !important;
+  border-collapse:collapse;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: black!important;
+}
+
+.react-date-picker__wrapper, .Dropdown-control{
+  border: 0;
+}
+.rc-table-cell{
+  text-align: center;
+}
+.react-date-picker__calendar .react-calendar {
+  border-width: thin;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 13, 100, 0.2);
+}
+.ReactModal__Overlay{
+  background-color: rgba(0, 13, 50, 0.5)!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModal__Content{
+  width: 200px;
+  height: 150;
+  border-radius: 1rem!important;
+  position: unset !important;
+  box-shadow: 0rem 0rem 1rem rgba(0,0,0,0.25);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.ReactModal__Content button{
+  background-color: #0d6efd ;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  bottom: 0;
+}
+
+.react-calendar__tile--range{
+  width: 20px !important;
+  padding: 0.5rem !important;
+  border-radius: 2rem;
+}

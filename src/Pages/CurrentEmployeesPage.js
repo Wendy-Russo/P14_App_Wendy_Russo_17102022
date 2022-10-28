@@ -1,0 +1,28 @@
+import Header from "../Components/Header"
+import EmployeeTable from "../Components/EmployeeTable"
+import DropdownPlugin from "../Plugins/DropdownPlugin"
+import MuiTable from "../Components/MuiTable"
+import React, { Component }  from 'react';
+
+function CurrentEmployeesPage({users}){
+
+    console.log(users)
+
+    return(
+
+
+      <div className="App bg-light ">
+        <Header active={"view"}/>
+        <main>
+          <div className="row justify-content-center py-3">
+            <div className="col col-xl-8 col-md-10 col-11 m-0 p-0">
+              <MuiTable users={users} />
+              <DropdownPlugin/>
+            </div>
+          </div>
+        </main>
+      </div>
+    )
+}
+
+export default CurrentEmployeesPage
