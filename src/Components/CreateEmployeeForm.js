@@ -1,8 +1,8 @@
-import Dropdown from 'react-dropdown';
 import DatePicker from 'react-date-picker';
 import ReactModal from "react-modal";
 import { useState } from 'react';
-import React, { Component }  from 'react';
+import React from 'react';
+import DropdownPlugin from "../Plugins/DropdownPlugin"
 
 ReactModal.setAppElement('#root')
 const DEPARTMENT = ["Department","Sales","Marketing","Enineering","Human Resources","Legal"];
@@ -17,7 +17,6 @@ function CreateEmployeeForm(props){
   const [state, changeState] = useState(0);
   const [department, changeDepartment] = useState(0);
   const[modal,setModal] = useState(0)
-
 
   const handleChange = props.handleChange;
 
@@ -37,9 +36,11 @@ function CreateEmployeeForm(props){
     const START_DATE = { "StartDate" : startDate.toString().slice(4,15)}
     const STREET = { "Street" : document.getElementById("street").value}
     const CITY = { "City" : document.getElementById("city").value}
-    const STATE = {"State" : state.value}
+    const STATE = {"State" : document.getElementById("State").value}
     const ZIPCODE = { "Zipcode" : document.getElementById("zipcode").value}
-    const DEPARTMENT = {"Department" : department.value}
+    const DEPARTMENT = {"Department" : document.getElementById("Department").value}
+
+    console.log(document.getElementById("state"))
 
     const USER_DATA = {...FIRST_NAME,...LAST_NAME,...BIRTH_DATE,...START_DATE,...STREET,...CITY,...STATE,...ZIPCODE,...DEPARTMENT};
     handleChange(USER_DATA);
@@ -87,7 +88,7 @@ function CreateEmployeeForm(props){
           </div>
 
           <div className="mb-3">
-            <Dropdown className='form-control border border-2 border-opacity-50 border-dark shadow-sm p-1 m-0' options={STATE} onChange={changeState} value={STATE[0]} placeholder="Select an option" />
+            <DropdownPlugin defaultValue={STATE[0]} options={STATE}/>
           </div>
 
           <div className="mb-3">
@@ -96,7 +97,7 @@ function CreateEmployeeForm(props){
         </fieldset>
 
         <div className="mb-3">
-          <Dropdown className='form-control border border-2 border-opacity-50 border-dark shadow-sm p-1 m-0' options={DEPARTMENT} onChange={changeDepartment} value={DEPARTMENT[0]} placeholder="Select an option" />  
+          <DropdownPlugin defaultValue={DEPARTMENT[0]} options={DEPARTMENT}/>
         </div>
         <button className="btn btn-primary btn-lg shadow-sm" type="submit">
           Save
@@ -114,5 +115,9 @@ function CreateEmployeeForm(props){
     </div>
   )
 }
+/*           
+<Dropdown className='form-control border border-2 border-opacity-50 border-dark shadow-sm p-1 m-0' options={DEPARTMENT} onChange={changeDepartment} value={DEPARTMENT[0]} placeholder="Select an option" />  
+<Dropdown className='form-control border border-2 border-opacity-50 border-dark shadow-sm p-1 m-0' options={STATE} onChange={changeState} value={STATE[0]} placeholder="Select an option" />
+*/
 
 export default CreateEmployeeForm

@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import { Navigate } from "react-router-dom";
 import { useState } from "react"
 
@@ -30,7 +30,7 @@ function Header(props){
 
   return(
     <header className="row  justify-content-center border-bottom">
-      <div className="col-10 my-2">
+      <div className="col-11 my-2">
         <nav className="navbar justify-content-between">
           <a className="navbar-brand me-auto" href="/">
             HRnet

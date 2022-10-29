@@ -14,10 +14,9 @@ function CurrentEmployeesPage({users}){
       <div className="App bg-light ">
         <Header active={"view"}/>
         <main>
-          <div className="row justify-content-center py-3">
-            <div className="col col-xl-8 col-md-10 col-11 m-0 p-0">
+          <div className="row justify-content-center bg-light">
+            <div className="col col-xl-8 col-md-10 col-11 m-0  mt-5">
               <MuiTable users={users} />
-              <DropdownPlugin/>
             </div>
           </div>
         </main>

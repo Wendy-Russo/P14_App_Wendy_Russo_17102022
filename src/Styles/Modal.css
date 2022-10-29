@@ -4,6 +4,20 @@
 
 .ReactModal__Content{
   width: 200px;
-  height: 100px;
+  height: 150px;
   border-radius: 1rem!important;
+}
+
+.css-1azl6jz-MuiTableCell-root{
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.MuiTablePagination-selectLabel,.MuiTablePagination-displayedRows{
+  margin: 0;
+}
+
+.css-u06erh-MuiPaper-root{
+  box-shadow: none !important;
+  background-color: transparent !important;
 }

@@ -1,77 +1,78 @@
 import { useState } from "react";
-import React, { Component }  from 'react';
+import React from 'react';
 
-function DropdownPlugin(){
+function DropdownPlugin(props){
 
-  const OPTIONS = ["Option 1","Option 2","Option 3"];
+  const OPTIONS = props.options;
+  const DEFAULT_VALUE = props.defaultValue;
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [valueID, updateValueID] = useState(0);
+  const [value, updateValue] = useState(props.defaultValue);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(OPTIONS[0]);
-
-  const iconClass = "fa-solid ms-2" +( isModalOpen ? " fa-caret-up" : " fa-caret-down" );
-  const listClass = "dropwodn-options bg-white list-decoration-none p-0 m-0" +( isModalOpen ? "" : " d-none" );
+  const iconClass = "fa-solid ms-2" +( isDropdownOpen ? " fa-caret-up" : " fa-caret-down" );
+  const listClass = "dropdown-options bg-white list-decoration-none p-0 m-0" +( isDropdownOpen ? "" : " d-none" );
 
   function makeOptions(array){
-    return(
-      array.map(
-        (elem,id) =>
-        <li key={id} className="list-group-item">
-          <a onClick={(e) => handleSelect(e)} href="#" className="list-group-item text-dark text-center border-top p-2">
-            {elem}
-          </a>
-        </li>
+    if(OPTIONS){
+      return(
+        array.map(
+          (elem,id) =>
+          <li key={id} className="list-group-item">
+            <a onClick={(e) => handleSelect(e)} href="#" id={"dropdown-option-"+id} className="list-group-item text-dark text-center border-top p-2 d-flex">
+              {elem}
+            </a>
+          </li>
+        )
       )
-    )
+    }
+    else{
+      console.log("Please use the 'options' prop to pass down options")
+    }
     
-  }
-
-  function openModal(){
-
-    setIsModalOpen(true);
-    console.log("Modal Opened");
-
-  }
-
-  function closeModal(){
-
-    setIsModalOpen(false);
-    console.log("Modal Closed");
-
   }
 
   function handleSelect(e){
 
-    setSelectedValue(e.target.innerHTML);
-    closeModal();
+    updateValue(e.target.innerHTML);
+    toggleDropdown();
 
   }
 
-  function toggleModal(){
+  function toggleDropdown(){
 
-    switch (isModalOpen) {
-      case true:
-        closeModal();
-        break;
+    setIsDropdownOpen(!isDropdownOpen);
 
-      case false:
-        openModal();
-        break;
-    
-      default:
-        openModal();
-        break;
-    }
+  }
+
+  function handleWheel(event){
+
+    event.preventDefault();
+    const SCROLL_AMOUNT = event.nativeEvent.wheelDeltaY;
+
+    let newValueID ;
+
+    (SCROLL_AMOUNT > 0) && (newValueID = Math.max( 0 , valueID-1));
+
+    (SCROLL_AMOUNT < 0) && (newValueID = Math.min( OPTIONS.length-1 , valueID+1));
+
+    updateValue(OPTIONS[newValueID]);
+
+    updateValueID(newValueID);
 
   }
 
   return(
-    <div className="dropdown-container btn border-dark border border-2 bg-white p-0">
-      <div className="px-3 py-2 ">
-        <button onClick={toggleModal} className="dropdown-button border-0 bg-white">
-          {selectedValue}
+    <div id="dropdown-plugin" className="w-100 dropdown-container btn border-dark border border-2 border-opacity-50 bg-white p-0">
+      <div className="w-100 me-auto ">
+
+        <button id={DEFAULT_VALUE} value={value} onWheel={handleWheel} onClick={toggleDropdown} type="button" className="ms-0 w-100 dropdown-button border-0 bg-transparent me-auto d-flex justify-content-between align-items-center p-2">
+          <span className="">
+            {value}
+          </span>
+          <i className={iconClass}>
+          </i>
         </button>
-        <i className={iconClass}>
-        </i>
+        
       </div>
       
       <ul className={listClass}>

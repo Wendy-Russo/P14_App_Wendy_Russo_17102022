@@ -1,6 +1,6 @@
 import Table from "rc-table";
 import { useState } from "react";
-import React, { Component }  from 'react';
+import React from 'react';
 
 function EmployeeTable(){
 

@@ -1,9 +1,11 @@
 import CreateEmployeePage from "./Pages/CreateEmployeePage";
 import CurrentEmployeesPage from "./Pages/CurrentEmployeesPage";
-import {BrowserRouter as Router,Routes,Route ,Navigate} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import React, { useState}  from 'react';
 
-import './App.css';
+import "./Styles/App.css";
+import "./Styles/Modal.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
