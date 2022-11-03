@@ -2,7 +2,7 @@ import DatePicker from 'react-date-picker';
 import ReactModal from "react-modal";
 import { useState } from 'react';
 import React from 'react';
-import DropdownPlugin from "../Plugins/DropdownPlugin"
+import DropdownPlugin from "@wendy-russo/simple-react-dropdown"
 
 ReactModal.setAppElement('#root')
 const DEPARTMENT = ["Department","Sales","Marketing","Enineering","Human Resources","Legal"];
@@ -88,7 +88,8 @@ function CreateEmployeeForm(props){
           </div>
 
           <div className="mb-3">
-            <DropdownPlugin defaultValue={STATE[0]} options={STATE}/>
+          <DropdownPlugin defaultValue={STATE[0]} options={STATE}/>
+
           </div>
 
           <div className="mb-3">
@@ -97,7 +98,8 @@ function CreateEmployeeForm(props){
         </fieldset>
 
         <div className="mb-3">
-          <DropdownPlugin defaultValue={DEPARTMENT[0]} options={DEPARTMENT}/>
+        <DropdownPlugin defaultValue={DEPARTMENT[0]} options={DEPARTMENT}/>
+
         </div>
         <button className="btn btn-primary btn-lg shadow-sm" type="submit">
           Save
@@ -115,7 +117,11 @@ function CreateEmployeeForm(props){
     </div>
   )
 }
-/*           
+/*        
+            <DropdownPlugin defaultValue={STATE[0]} options={STATE}/>
+
+          <DropdownPlugin defaultValue={DEPARTMENT[0]} options={DEPARTMENT}/>
+
 <Dropdown className='form-control border border-2 border-opacity-50 border-dark shadow-sm p-1 m-0' options={DEPARTMENT} onChange={changeDepartment} value={DEPARTMENT[0]} placeholder="Select an option" />  
 <Dropdown className='form-control border border-2 border-opacity-50 border-dark shadow-sm p-1 m-0' options={STATE} onChange={changeState} value={STATE[0]} placeholder="Select an option" />
 */

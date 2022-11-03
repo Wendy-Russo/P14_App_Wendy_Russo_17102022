@@ -36,12 +36,12 @@ function Header(props){
             HRnet
           </a>
           <div className="navbar" id="navbarNav">
-            <ul className=" nav nav-pills">
-              <li  onClick={handleCreate} className={ACTIVE == "create" ? "nav-link active": "nav-link"} aria-current="page">
+            <ul className=" nav nav-pills gap-3">
+              <li  onClick={handleCreate} className={"shadow-sm "+(ACTIVE === "create" ? "nav-link active": "nav-link bg-white")} aria-current="page">
                 {redirect &&<Navigate to="/" replace="true" />}
                 Create Employee
               </li>
-              <li onClick={handleSee} className={ACTIVE === "view" ? "nav-link active": "nav-link"} >
+              <li onClick={handleSee} className={"shadow-sm "+(ACTIVE === "view" ? "nav-link active": "nav-link bg-white")} >
                 {redirectSee &&<Navigate to="/list" replace="true" />} 
                 View Current Employees
               </li>

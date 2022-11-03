@@ -1,6 +1,5 @@
 import Header from "../Components/Header"
 import EmployeeTable from "../Components/EmployeeTable"
-import DropdownPlugin from "../Plugins/DropdownPlugin"
 import MuiTable from "../Components/MuiTable"
 import React, { Component }  from 'react';
 
