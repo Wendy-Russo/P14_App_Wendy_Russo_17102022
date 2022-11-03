@@ -1,11 +1,8 @@
 import Header from "../Components/Header"
-import EmployeeTable from "../Components/EmployeeTable"
 import MuiTable from "../Components/MuiTable"
-import React, { Component }  from 'react';
+import React  from 'react';
 
 function CurrentEmployeesPage({users}){
-
-    console.log(users)
 
     return(
 

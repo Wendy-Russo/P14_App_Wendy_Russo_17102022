@@ -14,9 +14,7 @@ function CreateEmployeeForm(props){
 
   const [birth, changeBirth] = useState(new Date());
   const [startDate, changeStartDate] = useState(new Date());
-  const [state, changeState] = useState(0);
-  const [department, changeDepartment] = useState(0);
-  const[modal,setModal] = useState(0)
+  const [modal,setModal] = useState(0)
 
   const handleChange = props.handleChange;
 
@@ -40,12 +38,9 @@ function CreateEmployeeForm(props){
     const ZIPCODE = { "Zipcode" : document.getElementById("zipcode").value}
     const DEPARTMENT = {"Department" : document.getElementById("Department").value}
 
-    console.log(document.getElementById("state"))
-
     const USER_DATA = {...FIRST_NAME,...LAST_NAME,...BIRTH_DATE,...START_DATE,...STREET,...CITY,...STATE,...ZIPCODE,...DEPARTMENT};
     handleChange(USER_DATA);
     handleOpenModal();
-    console.log(USER_DATA)
   }
 
   return(

@@ -173,10 +173,6 @@ function EmployeeTable(){
     const USER_NUMBER = USER.length;
     const PAGES_NUMBER = Math.ceil(USER_NUMBER/usersPerPage);
 
-    let usersSplit = [];
-
-
-
     function decreasePage(){
       const NEW_PAGE = Math.max(0,currentPage-1);
       setCurrentPage(NEW_PAGE)

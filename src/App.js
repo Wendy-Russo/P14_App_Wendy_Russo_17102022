@@ -28,11 +28,7 @@ function App() {
   const handleChange = data => {
     updateUser([...user,data])
   }
-
-  console.log(user,"APP.JS");
-
-
-  
+ 
   return (
     <Router>
       <Routes>
