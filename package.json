@@ -1,6 +1,8 @@
 {
   "name": "project",
   "version": "0.1.0",
+  "author": "Wendy Russo",
+  "description": "A lightweight ReactJs HR app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
