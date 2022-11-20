@@ -5,8 +5,8 @@ import React from 'react';
 import DropdownPlugin from "@wendy-russo/simple-react-dropdown"
 
 ReactModal.setAppElement('#root')
-const DEPARTMENT = ["Department","Sales","Marketing","Enineering","Human Resources","Legal"];
-const STATE = ['State','Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+const DEPARTMENT = ["Sales","Marketing","Enineering","Human Resources","Legal"];
+const STATE = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 
 
 function CreateEmployeeForm(props){
@@ -83,7 +83,7 @@ function CreateEmployeeForm(props){
           </div>
 
           <div className="mb-3">
-          <DropdownPlugin defaultValue={STATE[0]} options={STATE}/>
+          <DropdownPlugin defaultValue={"State"} options={STATE}/>
 
           </div>
 
@@ -93,7 +93,7 @@ function CreateEmployeeForm(props){
         </fieldset>
 
         <div className="mb-3">
-        <DropdownPlugin defaultValue={DEPARTMENT[0]} options={DEPARTMENT}/>
+        <DropdownPlugin defaultValue={"Department"} options={DEPARTMENT}/>
 
         </div>
         <button className="btn btn-primary btn-lg shadow-sm" type="submit">
